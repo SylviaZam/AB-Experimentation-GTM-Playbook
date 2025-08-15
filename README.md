@@ -11,7 +11,7 @@ It ingests a public experiment dataset, runs statistical tests (two-proportion z
 - **Notebook:** [`notebooks/01_ingest_eda.ipynb`](notebooks/01_ingest_eda.ipynb)  
 - **Sample Excel report:** [`notebooks/reports/ab_results_cookie_cats.xlsx`](notebooks/reports/ab_results_cookie_cats.xlsx)  
 - **Preview chart:**  
-  ![Summary chart](reports/assets/summary_chart.png)
+  ![Summary chart](assets/summary_chart.png)
 
 ---
 
