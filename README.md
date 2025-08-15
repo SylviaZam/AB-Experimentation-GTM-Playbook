@@ -15,6 +15,19 @@ It ingests a public experiment dataset, runs statistical tests (two-proportion z
 
 ---
 
+## Dataset context
+
+**Cookie Cats** is a mobile puzzle game that uses “gates” to block progress. This public A/B test moved the first gate from **level 30** (control: `gate_30`) to **level 40** (treatment: `gate_40`). The CSV tracks whether players came back **Day-1** and **Day-7** after install.
+
+**Columns**
+- `userid` — anonymous player ID (one row per user)
+- `version` — `gate_30` (control) or `gate_40` (treatment)
+- `sum_gamerounds` — total rounds played (engagement proxy)
+- `retention_1` — 0/1, returned the next day (D1)
+- `retention_7` — 0/1, returned seven days later (D7)
+
+---
+
 ## Executive summary (from this run)
 - **Day-1 retention:** Control = **44.82%**, Treatment = **44.23%** → **Δ = −0.59 pp**, **Lift = −1.32%**, **p = 0.0744**, **Significant @5%: No**  
 - **Day-7 retention:** Control = **19.02%**, Treatment = **18.20%** → **Δ = −0.82 pp**, **Lift = −4.31%**, **p = 0.0016**, **Significant @5%: Yes**
