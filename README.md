@@ -1,6 +1,6 @@
 # AB-Experimentation GTM Playbook
 
-Data-driven A/B testing playbook for Go-to-Market decisions!!
+Data-driven A/B testing playbook for Go-to-Market decisions.
 It ingests a public experiment dataset, runs statistical tests (two-proportion z-tests, confidence intervals, effect sizes), estimates **power** and **MDE**, and exports a stakeholder-ready Excel workbook plus a quick visual preview.
 
 > **Skills showcased:** SQL-first thinking, Python for statistical rigor, experiment design, power/MDE, executive storytelling, reproducibility.
@@ -50,7 +50,7 @@ Open the sample: [`notebooks/reports/ab_results_cookie_cats.xlsx`](notebooks/rep
 
 ---
 
-## Repository structure 
+## Repository structure
 
 data/                 # public CSV (auto-downloaded)
 notebooks/
@@ -65,25 +65,19 @@ assets/
 requirements.txt
 README.md
 
+
 ---
 
 ## Interpretation guide
-
-
 - **Absolute difference (pp)** is the most intuitive way to size impact; relative lift (%) helps compare across metrics with different baselines.
-
 - **p-value < 0.05** indicates statistical evidence; always check confidence intervals to understand uncertainty.
-
 - **Practical significance matters:** weigh impact vs. cost, UX tradeoffs, and operational constraints.
-
 - **Power & MDE:** If observed power is low, increase sample size or test duration to reliably detect meaningful effects.
-
 - **Validate assumptions:** randomization integrity, no SRM (sample ratio mismatch), and stability across key segments.
 
 ---
 
 ## Limitations
-
 - Assumes independent users and proper randomization; external shocks (seasonality, promos) can bias results.
 - Binary outcomes are modeled via two-proportion tests; for other metrics consider GLM/OLS or non-parametric tests.
 
@@ -101,4 +95,3 @@ pip install -r requirements.txt
 # 3) Run the notebook
 jupyter notebook
 # Open notebooks/01_ingest_eda.ipynb and Run All
-
