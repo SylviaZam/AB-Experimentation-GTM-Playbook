@@ -53,6 +53,20 @@ Open the sample: [`notebooks/reports/ab_results_cookie_cats.xlsx`](notebooks/rep
 ## Reproducibility
 ```bash
 python3 -m venv .venv
+
+data/                 # public CSV (auto-downloaded)
+notebooks/
+  └── 01_ingest_eda.ipynb
+  └── reports/
+      └── ab_results_cookie_cats.xlsx   # sample stakeholder workbook
+reports/              # optional alternative for reports
+src/                  # reserved for future helpers
+sql/                  # SQL patterns (DuckDB/SQLite), if used
+assets/
+  └── summary_chart.png
+requirements.txt
+README.md
+
 source .venv/bin/activate
 pip install -r requirements.txt
 jupyter notebook
