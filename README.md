@@ -50,24 +50,55 @@ Open the sample: [`notebooks/reports/ab_results_cookie_cats.xlsx`](notebooks/rep
 
 ---
 
-## Reproducibility
-```bash
-python3 -m venv .venv
+## Repository structure 
 
 data/                 # public CSV (auto-downloaded)
 notebooks/
   └── 01_ingest_eda.ipynb
   └── reports/
-      └── ab_results_cookie_cats.xlsx   # sample stakeholder workbook
-reports/              # optional alternative for reports
-src/                  # reserved for future helpers
-sql/                  # SQL patterns (DuckDB/SQLite), if used
+      └── ab_results_cookie_cats.xlsx   # sample stakeholder workbook (committed for reviewers)
+reports/              # optional alternative location for reports
+src/                  # reserved for future helpers/modules
+sql/                  # optional SQL validation (e.g., DuckDB)
 assets/
-  └── summary_chart.png
+  └── summary_chart.png                  # preview image for README
 requirements.txt
 README.md
 
+---
+
+## Interpretation guide
+
+
+- **Absolute difference (pp)** is the most intuitive way to size impact; relative lift (%) helps compare across metrics with different baselines.
+
+- **p-value < 0.05** indicates statistical evidence; always check confidence intervals to understand uncertainty.
+
+- **Practical significance matters:** weigh impact vs. cost, UX tradeoffs, and operational constraints.
+
+- **Power & MDE:** If observed power is low, increase sample size or test duration to reliably detect meaningful effects.
+
+- **Validate assumptions:** randomization integrity, no SRM (sample ratio mismatch), and stability across key segments.
+
+---
+
+## Limitations
+
+- Assumes independent users and proper randomization; external shocks (seasonality, promos) can bias results.
+- Binary outcomes are modeled via two-proportion tests; for other metrics consider GLM/OLS or non-parametric tests.
+
+---
+
+## Reproducibility
+```bash
+# 1) Create and activate a virtual environment
+python3 -m venv .venv
 source .venv/bin/activate
+
+# 2) Install dependencies
 pip install -r requirements.txt
+
+# 3) Run the notebook
 jupyter notebook
-# open notebooks/01_ingest_eda.ipynb and Run All
+# Open notebooks/01_ingest_eda.ipynb and Run All
+
