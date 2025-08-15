@@ -7,6 +7,5 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 .DS_Store
-reports/*.xlsx
 reports/*.pbix
 .analysis_cache.json
