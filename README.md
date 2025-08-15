@@ -1,6 +1,6 @@
 # AB-Experimentation GTM Playbook
 
-Data-driven A/B testing playbook for Go-to-Market decisions.  
+Data-driven A/B testing playbook for Go-to-Market decisions!!
 It ingests a public experiment dataset, runs statistical tests (two-proportion z-tests, confidence intervals, effect sizes), estimates **power** and **MDE**, and exports a stakeholder-ready Excel workbook plus a quick visual preview.
 
 > **Skills showcased:** SQL-first thinking, Python for statistical rigor, experiment design, power/MDE, executive storytelling, reproducibility.
