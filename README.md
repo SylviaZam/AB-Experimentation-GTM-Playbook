@@ -15,9 +15,27 @@ It ingests a public experiment dataset, runs statistical tests (two-proportion z
 
 ---
 
-## Dataset context
+## Situational context
 
-**Cookie Cats** is a mobile puzzle game that uses “gates” to block progress. This public A/B test moved the first gate from **level 30** (control: `gate_30`) to **level 40** (treatment: `gate_40`). The CSV tracks whether players came back **Day-1** and **Day-7** after install.
+Now, this repo is to be applied for a similar **hypothetical** case advising a product team evaluating a feature rollout. The team ran a clean A/B test and needs a **decision-ready** readout: effect size, power/MDE, significance, and a clear ship/iterate call.
+
+The sample **dataset context** is the use of the App store **Cookie Cats** puzzle game that uses “gates” to block progress. This public A/B test moved the first gate from **level 30** (control: `gate_30`) to **level 40** (treatment: `gate_40`). The CSV tracks whether players came back **Day-1** and **Day-7** after install.
+
+**Business question**
+- Does the treatment improve retention enough to merit rollout, given uncertainty and sample size?
+
+**What the sample represents**
+- Public “Cookie Cats” dataset (game retention) used as a stand-in for app features.
+- Notebook runs two-proportion z-tests, CIs, **Cohen’s h**, **observed power**, and **MDE**.
+
+**How to use the output**
+- **Summary**: absolute delta (pp), relative lift, p-value, effect size, significance flag.
+- **Power_MDE**: whether you had enough sample to detect a practical effect.
+
+**Decision patterns**
+- If **p < 0.05** and lift is practical → ship/scale.
+- If **under-powered** → extend or re-scope (targeted cohorts, longer run, bigger effect).
+---
 
 **Columns**
 - `userid` — anonymous player ID (one row per user)
